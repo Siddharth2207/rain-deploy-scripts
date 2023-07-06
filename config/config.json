@@ -1,0 +1,60 @@
+{
+  "contracts": {
+    "mumbai": {
+      "interpreter": {
+        "address": "0x5f02c2f831d3e0d430aa58c973b8b751f3d81b38",
+        "transaction": "0xd8ff2d9381573294ce7d260d3f95e8d00a42d55a5ac29ff9ae22a401b53c2e19"
+      },
+      "store": {
+        "address": "0xa5d9c16ddfd05d398fd0f302edd9e9e16d328796",
+        "transaction": "0xf18f9f3531d35ea41837e10c1fc55d7dc8a75f01bda864cf169d24e2cec8367a"
+      },
+      "expressionDeployer": {
+        "address": "0xd3870063bcf25d5110ab9df9672a0d5c79c8b2d5",
+        "transaction": "0xebacdb3971924c9bbd2257334d436b4590d3d98f54969f6f942d6bd7a68da80b"
+      },
+      "orderbook": {
+        "address": "0x7cba577700d03dbcda9af634c8997d3a44c710af",
+        "transaction": "0x19057dd09daa848349e32e139197b271b925d86dfe00246a1e7883c0b108a9bd"
+      },
+      "clonefactory": {
+        "address": "0x843a11c6b9f8b73d7cc5658eab6db0e871bb7022",
+        "transaction": "0x1dd76b1f25db84500ce868a03c399e4b9485ed0a892420a166ad7894c61fdc3d"
+      },
+      "flow": {
+        "address": "0x6b98cefcba396ac90e075b6532914ab7ff043ea7",
+        "transaction": "0x40ce6c07f58364e957b4c0d91e8b12c4194a0200f48a4b33350965381e156eaf"
+      },
+      "flowERC20": {
+        "address": "0x481015f97fc141efbd0cefc559e194412d425490",
+        "transaction": "0xfd135b19af4dd68a17f5e5a006aec905448e907652dcfe0f9a2fd09a35eb45f8"
+      }
+    },
+    "snowtrace": {
+      "interpreter": {
+        "address": "0xd1bf6bf0d7d44d43e5d99720b9caaa9fa6bc289f",
+        "transaction": "0x3155f6a5e739960c7a74a6cbfc9593d622cfa5f0268b495def1a37bc8e20eced"
+      },
+      "store": {
+        "address": "0x3ecd0ef901f2d76d22b3d881b85949cb0160b355",
+        "transaction": "0xf4f7dfebb72480af9f494864257451ac02e5bbb40569e1ac1475149782bede90"
+      },
+      "expressionDeployer": {
+        "address": "0xfe7e32755f5f0084109243647bce06bf3152e01f",
+        "transaction": "0xe88db071e33e476f3f78327c6d21e63df681cb66e0714e17eebc37777326a299"
+      },
+      "flow": {
+        "address": "0xef886da46c13621452a04ea026c5aaf686535a87",
+        "transaction": "0x454e840c1d9f045f93bc90c4b7f1e91fa5cff6642ddaa89cee069d3b9fcc8a88"
+      },
+      "flowERC20": {
+        "address": "0xe5dfe41efb4ca3efc7131add009966ae649addc8",
+        "transaction": "0xf8131d1b508f70611109a7cd50de31e61a413c3f6a7035e0231c448fb8fefc93"
+      }
+    }
+  },
+  "hardhat": {
+    "forkBaseUrl": "https://polygon-mumbai.g.alchemy.com/v2/",
+    "blockNumber": 35161874
+  }
+}

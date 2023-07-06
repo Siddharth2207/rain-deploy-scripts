@@ -1,0 +1,46 @@
+{
+  "name": "rain-deploy-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siddharth2207/rain-deploy-scripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Siddharth2207/rain-deploy-scripts/issues"
+  },
+  "homepage": "https://github.com/Siddharth2207/rain-deploy-scripts#readme" ,
+  "devDependencies": {
+    "@ethereumjs/common": "^3.1.1",
+    "@ethereumjs/tx": "^4.1.1",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@prb/math": "=3.3.0",
+    "@rainprotocol/rain-protocol": "git://github.com/rainprotocol/rain-protocol.git#613769424da0faccd68bfa8d9b3af911a278c706",
+    "@wagmi/core": "^0.10.3",
+    "dotenv": "=16.0.3",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.13.0",
+    "hardhat-contract-sizer": "=2.6.1",
+    "solc": "^0.8.17",
+    "string-math": "^1.2.2",
+    "ts-node": "^10.9.1",
+    "tslib": "=2.4.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@0x/contract-addresses": "^8.2.0",
+    "@rainprotocol/rainlang": "^2.2.2",
+    "@sonicswap/wagmi-core": "^3.0.0",
+    "alchemy-sdk": "^2.9.1",
+    "axios": "^1.3.4",
+    "erc-20-abi": "^1.0.0"
+  }
+}
