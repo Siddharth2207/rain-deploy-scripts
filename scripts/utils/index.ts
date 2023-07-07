@@ -32,8 +32,8 @@ export const getEtherscanKey = (network:string) => {
   let key = ''
   if (network === "mumbai" || network === "polygon"){ 
     key = process.env.POLYGONSCAN_API_KEY
-  }else if(network === "snowtrace" || network === "avalanche"){
-    key = process.env.SNOWTRACE_KEY
+  }else if(network === "fuji" || network === "avalanche"){
+    key = process.env.AVALANCHE_KEY
   }else if(network === "sepolia" || network === "goerli"){
     key = process.env.ETHERSCAN_API_KEY
   }else if(network === "hardhat"){
@@ -52,7 +52,7 @@ export const getEtherscanBaseURL = (network:string) => {
     url = 'https://api-testnet.polygonscan.com/api'
   }else if(network === "goerli"){
     url = '' // ?? 
-  }else if(network === "snowtrace"){
+  }else if(network === "fuji"){
     url = 'https://api-testnet.snowtrace.io/api'
   }else if(network === "sepolia"){
     url = 'https://api-sepolia.etherscan.io/api'
@@ -79,7 +79,7 @@ export const getProvider = (network:string) => {
       provider = new ethers.providers.AlchemyProvider("maticmum",`${process.env.ALCHEMY_KEY_MUMBAI}`)   
     }else if(network === "goerli"){
       provider = new ethers.providers.AlchemyProvider("goerli",`${process.env.ALCHEMY_KEY_GORELI}`)  
-    }else if(network === "snowtrace"){ 
+    }else if(network === "fuji"){ 
       provider = new ethers.providers.JsonRpcProvider('https://api.avax-test.network/ext/bc/C/rpc')
     }else if(network === "sepolia"){ 
       provider = new ethers.providers.JsonRpcProvider(`https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_KEY_SEPOLIA}`)
@@ -102,7 +102,7 @@ export const getCommons = (network:string) => {
         common = Common.custom(CustomChain.PolygonMumbai) 
     }else if(network === "goerli"){
       common = new Common({ chain: Chain.Goerli, hardfork: Hardfork.London })
-    }else if(network === "snowtrace"){
+    }else if(network === "fuji"){
       common = Common.custom({ chainId: 43113 })
     }else if(network === "sepolia"){
       common = Common.custom({ chainId: 11155111 })
@@ -238,7 +238,7 @@ export const estimateFeeData = async (
     chainProvider._network.chainId === 11155111 || 
     chainProvider._network.chainId === 43114 || 
     chainProvider._network.chainId === 5 ){
-    // Snowtrace Network
+    // Avalanche Network
     const feeData = await chainProvider.getFeeData();   
     return {
       gasPrice: BigNumber.from("0x7A1200"),

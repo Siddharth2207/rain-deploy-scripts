@@ -14,12 +14,12 @@
         "transaction": "0xebacdb3971924c9bbd2257334d436b4590d3d98f54969f6f942d6bd7a68da80b"
       },
       "orderbook": {
-        "address": "0xefca12b267787ab70961d8150b6bdc2ed14e9ed3",
-        "transaction": "0x4c64467f04460374c4dbc4d4170deb32fa3155e654e73a227abce3583fb617fc"
+        "address": "0x3cc6c6e888b4ad891eea635041a269c4ba1c4a63",
+        "transaction": "0xc215bf3dc7440687ca20e028158e58640eeaec72d6fe6738f6d07843835c2cde"
       },
       "clonefactory": {
-        "address": "0xc5c5288078f82000007ca0a58dd87f0610b81e49",
-        "transaction": "0x4f9fd9a5488308c10eacc9d41a537a694a2535614605bb2808f3772acdae0e51"
+        "address": "0xd3b33c61140aad6f0d7d3179b77d6aee150c4f06",
+        "transaction": "0x6cc358e7f98ae65383b64ab7aaae783b956b23267970f932082992625ac60c78"
       },
       "flow": {
         "address": "0x6b98cefcba396ac90e075b6532914ab7ff043ea7",
@@ -30,7 +30,7 @@
         "transaction": "0xfd135b19af4dd68a17f5e5a006aec905448e907652dcfe0f9a2fd09a35eb45f8"
       }
     },
-    "snowtrace": {
+    "fuji": {
       "interpreter": {
         "address": "0xd1bf6bf0d7d44d43e5d99720b9caaa9fa6bc289f",
         "transaction": "0x3155f6a5e739960c7a74a6cbfc9593d622cfa5f0268b495def1a37bc8e20eced"

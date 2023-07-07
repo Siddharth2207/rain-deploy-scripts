@@ -32,10 +32,10 @@ async function main() {
       Deploy contracts
 
         --from, -f <network name>
-          Name of the network to deploy from. Any of ["snowtrace","goerli","mumbai","sepolia","polygon","avalanche"]
+          Name of the network to deploy from. Any of ["fuji","goerli","mumbai","sepolia","polygon","avalanche"]
 
         --to, -t <network name>
-          Name of the network to deploy the contract. Any of ["snowtrace",goerli","mumbai","sepolia","polygon","avalanche"]
+          Name of the network to deploy the contract. Any of ["fuji",goerli","mumbai","sepolia","polygon","avalanche"]
       `
     );
   }else{ 
@@ -44,7 +44,7 @@ async function main() {
 
 
     //valid networks
-    const validNetworks = ["goerli","snowtrace","mumbai","sepolia","polygon","avalanche"]
+    const validNetworks = ["goerli","fuji","mumbai","sepolia","polygon","avalanche"]
 
 
     if (
