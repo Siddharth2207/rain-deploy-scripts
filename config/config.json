@@ -14,12 +14,12 @@
         "transaction": "0xebacdb3971924c9bbd2257334d436b4590d3d98f54969f6f942d6bd7a68da80b"
       },
       "orderbook": {
-        "address": "0x7cba577700d03dbcda9af634c8997d3a44c710af",
-        "transaction": "0x19057dd09daa848349e32e139197b271b925d86dfe00246a1e7883c0b108a9bd"
+        "address": "0xefca12b267787ab70961d8150b6bdc2ed14e9ed3",
+        "transaction": "0x4c64467f04460374c4dbc4d4170deb32fa3155e654e73a227abce3583fb617fc"
       },
       "clonefactory": {
-        "address": "0x843a11c6b9f8b73d7cc5658eab6db0e871bb7022",
-        "transaction": "0x1dd76b1f25db84500ce868a03c399e4b9485ed0a892420a166ad7894c61fdc3d"
+        "address": "0xc5c5288078f82000007ca0a58dd87f0610b81e49",
+        "transaction": "0x4f9fd9a5488308c10eacc9d41a537a694a2535614605bb2808f3772acdae0e51"
       },
       "flow": {
         "address": "0x6b98cefcba396ac90e075b6532914ab7ff043ea7",
@@ -50,6 +50,14 @@
       "flowERC20": {
         "address": "0xe5dfe41efb4ca3efc7131add009966ae649addc8",
         "transaction": "0xf8131d1b508f70611109a7cd50de31e61a413c3f6a7035e0231c448fb8fefc93"
+      },
+      "orderbook": {
+        "address": "0xbed101693bc48469779732639f8afe6ae10cb8c0",
+        "transaction": "0xce4702fa4e3cae9b9932ce6d52f73efc6a9892607845f07f5bc5be7a03d0e45e"
+      },
+      "clonefactory": {
+        "address": "0xaf2e4d5d8bb3cfaa63c5f90c734bf9221202ec56",
+        "transaction": "0xb3c0ea00dc05d22881b9aab869dfc3124b289679ccf9a4a7d2a077ad601e27fc"
       }
     }
   },

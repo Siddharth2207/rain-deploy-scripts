@@ -32,11 +32,9 @@ export const getEtherscanKey = (network:string) => {
   let key = ''
   if (network === "mumbai" || network === "polygon"){ 
     key = process.env.POLYGONSCAN_API_KEY
-  }else if(network === "goerli"){
-    key = ''
-  }else if(network === "snowtrace"){
+  }else if(network === "snowtrace" || network === "avalanche"){
     key = process.env.SNOWTRACE_KEY
-  }else if(network === "sepolia"){
+  }else if(network === "sepolia" || network === "goerli"){
     key = process.env.ETHERSCAN_API_KEY
   }else if(network === "hardhat"){
     key = ''
@@ -53,7 +51,7 @@ export const getEtherscanBaseURL = (network:string) => {
   if (network === "mumbai"){ 
     url = 'https://api-testnet.polygonscan.com/api'
   }else if(network === "goerli"){
-    url = ''
+    url = '' // ?? 
   }else if(network === "snowtrace"){
     url = 'https://api-testnet.snowtrace.io/api'
   }else if(network === "sepolia"){
@@ -62,6 +60,8 @@ export const getEtherscanBaseURL = (network:string) => {
     url = 'https://api.polygonscan.com/api'
   }else if(network === "hardhat"){
     url = ''
+  }else if(network === "avalanche"){
+    url = 'https://api.snowtrace.io/api'
   }
   return url
 }  
@@ -80,7 +80,6 @@ export const getProvider = (network:string) => {
     }else if(network === "goerli"){
       provider = new ethers.providers.AlchemyProvider("goerli",`${process.env.ALCHEMY_KEY_GORELI}`)  
     }else if(network === "snowtrace"){ 
-      console.log("ins snowtrace")
       provider = new ethers.providers.JsonRpcProvider('https://api.avax-test.network/ext/bc/C/rpc')
     }else if(network === "sepolia"){ 
       provider = new ethers.providers.JsonRpcProvider(`https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_KEY_SEPOLIA}`)
@@ -88,7 +87,8 @@ export const getProvider = (network:string) => {
       provider = new ethers.providers.AlchemyProvider("matic",`${process.env.ALCHEMY_KEY_POLYGON}`)   
     }else if(network === "hardhat"){
       provider = new ethers.providers.JsonRpcProvider('http://127.0.0.1:8545') 
-      
+    }else if(network === "avalanche"){ 
+      provider = new ethers.providers.JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc') 
     }
     return provider
 } 
@@ -110,7 +110,8 @@ export const getCommons = (network:string) => {
       common = Common.custom(CustomChain.PolygonMainnet) 
     }else if(network === "hardhat"){
       common = Common.custom({ chainId: 31337 })
-
+    }else if(network === "avalanche"){
+      common = Common.custom({ chainId: 43114 })
     }
     
     return common
@@ -208,8 +209,6 @@ export const estimateFeeData = async (
 
     //Call the method to return the recommended fee data to use in a transaction.
     const gasDataForPolygon = await alchemy.core.getFeeData()
-
-    console.log("gasDataForPolygon : " , gasDataForPolygon)
      
     let res = await axios.get(
       "https://api.blocknative.com/gasprices/blockprices?chainid=137",
@@ -218,8 +217,6 @@ export const estimateFeeData = async (
         }
       }
     ) 
-
-  
 
   let maxPriorityFeePerGas = ethers.utils.parseUnits(`${res.data.blockPrices[0].estimatedPrices[0].maxPriorityFeePerGas}`,9)
   let maxFeePerGas = ethers.utils.parseUnits(`${res.data.blockPrices[0].estimatedPrices[0].maxFeePerGas}`,9) 
@@ -236,7 +233,11 @@ export const estimateFeeData = async (
       maxFeePerGas: BigNumber.from("1500000030"),
       maxPriorityFeePerGas: BigNumber.from("1500000000"),
     };
-  }else if(chainProvider._network.chainId === 43113 || chainProvider._network.chainId === 11155111 ){
+  }else if(
+    chainProvider._network.chainId === 43113 || 
+    chainProvider._network.chainId === 11155111 || 
+    chainProvider._network.chainId === 43114 || 
+    chainProvider._network.chainId === 5 ){
     // Snowtrace Network
     const feeData = await chainProvider.getFeeData();   
     return {
@@ -297,8 +298,6 @@ export const deployContractToNetwork = async (provider: any, common: Common,  pr
 
     const nonce = await provider.getTransactionCount(signer.address)   
 
-    console.log("beofre estimate..............")
-
     // An estimate may not be accurate since there could be another transaction on the network that was not accounted for,
     // but after being mined affected relevant state.
     // https://docs.ethers.org/v5/api/providers/provider/#Provider-estimateGas
@@ -306,13 +305,7 @@ export const deployContractToNetwork = async (provider: any, common: Common,  pr
       data: transactionData
     })  
 
-    console.log("after estimate..............")
-
-
-
     const feeData = await estimateFeeData(provider)  
-    console.log("feeData............. : " , feeData.maxFeePerGas.toHexString())
-    
   
     // hard conded values to be calculated
     const txData = { 

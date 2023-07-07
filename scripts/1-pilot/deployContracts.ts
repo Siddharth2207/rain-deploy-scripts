@@ -32,10 +32,10 @@ async function main() {
       Deploy contracts
 
         --from, -f <network name>
-          Name of the network to deploy from. Any of ["snowtrace","goerli","mumbai","sepolia","polygon"]
+          Name of the network to deploy from. Any of ["snowtrace","goerli","mumbai","sepolia","polygon","avalanche"]
 
         --to, -t <network name>
-          Name of the network to deploy the contract. Any of ["snowtrace",goerli","mumbai","sepolia","polygon"]
+          Name of the network to deploy the contract. Any of ["snowtrace",goerli","mumbai","sepolia","polygon","avalanche"]
       `
     );
   }else{ 
@@ -44,7 +44,7 @@ async function main() {
 
 
     //valid networks
-    const validNetworks = ["goerli","snowtrace","mumbai","sepolia","polygon"]
+    const validNetworks = ["goerli","snowtrace","mumbai","sepolia","polygon","avalanche"]
 
 
     if (
@@ -77,17 +77,17 @@ async function main() {
 
     
    
-    // await deployInterpreter(fromNetwork,toNetwork)  
+    await deployInterpreter(fromNetwork,toNetwork)  
 
-    // await deployStore(fromNetwork,toNetwork)  
+    await deployStore(fromNetwork,toNetwork)  
 
-    // await deployExpressionDeployer(fromNetwork,toNetwork) 
+    await deployExpressionDeployer(fromNetwork,toNetwork) 
 
-    // await deployOrderBook(fromNetwork,toNetwork) 
+    await deployOrderBook(fromNetwork,toNetwork) 
 
-    // await deployCloneFactory(fromNetwork,toNetwork)
+    await deployCloneFactory(fromNetwork,toNetwork) 
 
-    // await deployFlow(fromNetwork,toNetwork) 
+    await deployFlow(fromNetwork,toNetwork) 
 
     await deployFlowERC20(fromNetwork,toNetwork) 
 
